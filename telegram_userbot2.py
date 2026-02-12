@@ -1,6 +1,7 @@
 import asyncio
 import random
 import os
+from dotenv import load_dotenv
 from datetime import datetime, timedelta
 from collections import deque
 from telethon import TelegramClient, events
@@ -9,9 +10,11 @@ from telethon.tl.types import Message
 
 
 # ==================== НАСТРОЙКИ ====================
-# API Credentials (получить на https://my.telegram.org)
-api_id = 31602734 # Замените на ваш api_id
-api_hash = '626c1101baf346da1676ff957a7fceec'  # Замените на ваш api_hash
+load_dotenv()
+
+api_id = int(os.getenv("API_ID"))
+api_hash = os.getenv("API_HASH")
+phone = os.getenv("PHONE")
 
 # Имя session-файла (будет создан автоматически при первом запуске)
 session_name = 'userbot'

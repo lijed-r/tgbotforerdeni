@@ -1,7 +1,12 @@
 from telethon import TelegramClient
+from dotenv import load_dotenv
+import os
 
-api_id = 31602734
-api_hash = '626c1101baf346da1676ff957a7fceec'
+load_dotenv()
+
+api_id = int(os.getenv("API_ID"))
+api_hash = os.getenv("API_HASH")
+phone = os.getenv("PHONE")
 
 client = TelegramClient('session', api_id, api_hash)
 

@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.log
+.vscode/
+.idea/
+.env
+session.session
+.DS_Store
+userbot.session
+*.session
